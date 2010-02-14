@@ -4,12 +4,11 @@ use Test::Exception;
 
 BEGIN { use_ok( "Bio::Tools::SeqScore" ) };
 
-my $f = sub { return '42' };
-
 dies_ok { Bio::Tools::SeqScore->new } 'Dies without a function';
 
-my $s;
+my $f = sub { return '42' };
 
+my $s;
 lives_ok { $s = Bio::Tools::SeqScore->new( function => $f ) } 'Lives';
 
 my $sequence = "FOO" x 10;
