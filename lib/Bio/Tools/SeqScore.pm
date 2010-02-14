@@ -2,7 +2,7 @@ package Bio::Tools::SeqScore;
 use Moose;
 use MooseX::Types::Moose qw(CodeRef);
 use MooseX::Types::Common::Numeric qw(PositiveInt);
-use Bio::SlidingWindow qw(score_iterator);
+use Bio::SlidingWindow score_iterator => { -as => '_score_iterator' };
 
 use namespace::autoclean;
 
@@ -45,7 +45,7 @@ sub score_iterator {
     my $w = $args{window_size} // $self->window_size;
     my $s = $args{step}        // $self->step;
 
-    my $it = score_iterator(
+    my $it = _score_iterator(
         sequence    => \$sequence,
         function    => $self->_function,
         window_size => $w,
