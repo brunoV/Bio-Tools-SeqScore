@@ -11,3 +11,4 @@ nytprof/
 .prove
 Bio-Tools-*/
 .build
+*.ERR
