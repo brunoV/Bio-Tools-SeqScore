@@ -3,13 +3,12 @@ use Moose;
 extends 'Bio::Tools::SeqScore';
 
 has '+_function' => (
-    init_arg => undef,
     lazy     => 1,
     default  => \&_build__function,
 );
 
-has '+window_size' => ( init_arg => undef, default => 7 );
-has '+step'        => ( init_arg => undef, default => 1 );
+has '+window_size' => ( default => 7 );
+has '+step'        => ( default => 1 );
 
 # TODO: Abstract this to a role, of a family of functions that depend on
 # scoring matrices.
