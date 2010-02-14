@@ -29,9 +29,9 @@ sub _build__function {
 
         my @residues = split('', $peptide);
 
-        my ($score, $i);
+        my ($score, $i) = (0, 0);
         foreach my $r (@residues) {
-            $score += $self->_score_matrix->{$r}[$i];
+            $score += $self->_score_matrix->{$r}[$i++];
         }
 
         return $score;
