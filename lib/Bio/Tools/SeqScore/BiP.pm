@@ -1,4 +1,7 @@
 package Bio::Tools::SeqScore::BiP;
+
+# ABSTRACT: Calculate the BiP binding score of a protein sequence
+
 use Moose;
 extends 'Bio::Tools::SeqScore';
 

@@ -1,4 +1,7 @@
 package Bio::Tools::SeqScore;
+
+# ABSTRACT: A class that calculates scores over sequences.
+
 use Moose;
 use MooseX::Types::Moose qw(CodeRef);
 use MooseX::Types::Common::Numeric qw(PositiveInt);
